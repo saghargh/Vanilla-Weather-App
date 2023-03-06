@@ -20,29 +20,33 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
+
+  changeBackground(hours);
+
   return `${day} ${hours}:${minutes}`;
 }
 
 function changeBackground(hours) {
   if (hours >= 6 && hours < 12) {
-    document
-      .getElementById("fullPage")
-      .setAttribute("style", "background-image: url('./src/morning.jpg')");
+    document.setAttribute(
+      "style",
+      "background-image: url('./src/morning.jpg')"
+    );
   }
   if (hours >= 12 && hours < 18) {
-    document
-      .getElementById("fullPage")
-      .setAttribute("style", "background-image: url('./src/afternoon.jpg')");
+    document.setAttribute(
+      "style",
+      "background-image: url('./src/afternoon.jpg')"
+    );
   }
   if ((hours >= 18 && hours, 22)) {
-    document
-      .getElementById("fullPage")
-      .setAttribute("style", "background-image: url('./src/evening.jpg')");
+    document.setAttribute(
+      "style",
+      "background-image: url('./src/evening.jpg')"
+    );
   }
   if (hours > 22) {
-    document
-      .getElementById("fullPage")
-      .setAttribute("style", "background-image: url('./src/night.jpg')");
+    document.setAttribute("style", "background-image: url('./src/night.jpg')");
   }
 }
 
@@ -136,11 +140,11 @@ function handleSubmit(event) {
 }
 
 function searchLocation(position) {
-  let longitude = position.coordinates.longitude;
-  let latitude = position.coordinates.latitude;
+  let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
   let apiKey = "eo6cc869dfe854a6fa3b7d7tdda4b04f";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function getCurrentLocation(event) {
