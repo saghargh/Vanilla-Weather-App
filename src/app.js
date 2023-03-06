@@ -1,6 +1,7 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
+
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -22,6 +23,29 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function changeBackground(hours) {
+  if (hours >= 6 && hours < 12) {
+    document
+      .getElementById("fullPage")
+      .setAttribute("style", "background-image: url('./src/morning.jpg')");
+  }
+  if (hours >= 12 && hours < 18) {
+    document
+      .getElementById("fullPage")
+      .setAttribute("style", "background-image: url('./src/afternoon.jpg')");
+  }
+  if ((hours >= 18 && hours, 22)) {
+    document
+      .getElementById("fullPage")
+      .setAttribute("style", "background-image: url('./src/evening.jpg')");
+  }
+  if (hours > 22) {
+    document
+      .getElementById("fullPage")
+      .setAttribute("style", "background-image: url('./src/night.jpg')");
+  }
+}
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -31,7 +55,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -49,12 +72,12 @@ function displayForecast(response) {
       width="42"
     />
     <div class="weather-forecast-temperature">
-      <span class="weather-forecast-temperature-max">${Math.round(
+      <div class="weather-forecast-temperature-max"><i class="bi bi-arrow-up"></i>${Math.round(
         forecastDay.temperature.maximum
-      )}°</span>|
-      <span class="weather-forecast-temperature-min">${Math.round(
+      )}°</div>
+      <div class="weather-forecast-temperature-min"><i class="bi bi-arrow-down"></i>${Math.round(
         forecastDay.temperature.minimum
-      )}°</span>
+      )}°</div>
     </div>
   </div>`;
     }
@@ -112,6 +135,22 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function searchLocation(position) {
+  let longitude = position.coordinates.longitude;
+  let latitude = position.coordinates.latitude;
+  let apiKey = "eo6cc869dfe854a6fa3b7d7tdda4b04f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -129,7 +168,7 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-search("Lisbon");
+search("Toronto");
 
 let celsiusTemperature = null;
 

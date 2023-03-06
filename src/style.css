@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Noto Serif, serif;
 }
 
 h1 {
@@ -21,7 +21,7 @@ li {
   margin: 0;
   padding: 0;
 
-  color: rgb(155, 155, 155);
+  color: #000;
   font-size: 14px;
   font-weight: 100;
   line-height: 15px;
@@ -32,13 +32,19 @@ li.first-letter {
 }
 
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 700px;
+  max-height: 550px;
   margin: 50px auto;
 }
 .weather-app {
   padding: 20px;
   border: 1px solid #dadda1;
   border-radius: 5px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(248, 243, 243, 0.3),
+    rgb(233, 233, 240)
+  );
 }
 
 .ovreview {
@@ -81,7 +87,6 @@ li.first-letter {
 .weather-forecast-date {
   font-size: 16px;
   color: #000;
-  opacity: 0.4;
 }
 
 .weather-forecast-temperature-min {
@@ -90,4 +95,20 @@ li.first-letter {
 
 .weather-forecast-temperature {
   font-size: 13px;
+}
+
+.bi {
+  color: #000;
+}
+
+.bi-arrow-up {
+  color: orange;
+}
+
+.bi-arrow-down {
+  color: aqua;
+}
+
+.row {
+  margin-top: 50px;
 }
