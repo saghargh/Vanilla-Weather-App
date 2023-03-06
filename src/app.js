@@ -30,23 +30,26 @@ function changeBackground(hours) {
   if (hours >= 6 && hours < 12) {
     document.setAttribute(
       "style",
-      "background-image: url('./src/morning.jpg')"
+      "background-image: url('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/morning.jpg')"
     );
   }
   if (hours >= 12 && hours < 18) {
     document.setAttribute(
       "style",
-      "background-image: url('./src/afternoon.jpg')"
+      "background-image: url('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/afternoon.jpg')"
     );
   }
   if ((hours >= 18 && hours, 22)) {
     document.setAttribute(
       "style",
-      "background-image: url('./src/evening.jpg')"
+      "background-image: url ('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/evening.jpg')"
     );
   }
   if (hours > 22) {
-    document.setAttribute("style", "background-image: url('./src/night.jpg')");
+    document.setAttribute(
+      "style",
+      "background-image: url('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/night.jpg')"
+    );
   }
 }
 
