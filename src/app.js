@@ -27,22 +27,22 @@ function formatDate(timestamp) {
 }
 
 function changeBackground(hours) {
-  if (hours >= 6 && hours < 12) {
+  if (hours >= 4 && hours < 12) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/morning.jpg")`);
   }
-  if (hours >= 12 && hours < 18) {
+  if (hours >= 12 && hours < 17) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/afternoon.jpg")`);
   }
-  if (hours >= 18 && hours < 22) {
+  if (hours >= 17 && hours < 20) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/evening.jpg")`);
   }
-  if (hours > 22) {
+  if (hours > 20 && 0 < hours < 4) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/night.jpg")`);
