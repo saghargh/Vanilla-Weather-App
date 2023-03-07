@@ -48,12 +48,12 @@ li.first-letter {
 .weather-app-wrapper {
   max-width: 700px;
   max-height: 550px;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 .weather-app {
   padding: 20px;
   border: 1px solid #dadda1;
-  border-radius: 5px;
+  border-radius: 10px;
   background-image: linear-gradient(
     to bottom,
     rgba(248, 243, 243, 0.3),
@@ -125,6 +125,33 @@ li.first-letter {
 }
 
 .btn {
-  background-color: rgb(14, 132, 168);
-  border-color: rgb(126, 126, 141);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(37, 36, 36, 0.3),
+    rgb(140, 140, 146)
+  );
+}
+
+.name {
+  max-width: 200px;
+  max-height: 100px;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid #dadda1;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(37, 36, 36, 0.3),
+    rgb(140, 140, 146)
+  );
+  position: block;
+  margin: 10px auto;
+}
+
+.defenition {
+  opacity: 0.8;
+}
+
+.note {
+  opacity: 0.8;
 }

@@ -27,12 +27,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
-    <title>Weather App</title>
+
+    <title>EQLIM WEATHER APP</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <div class="name">Eqlim Weather App</div>
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-6">
@@ -45,17 +47,10 @@
                 />
               </div>
               <div class="col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="btn btn-primary w-100"
-                />
+                <input type="submit" value="Search" class="btn w-100" />
               </div>
               <div class="col-3">
-                <button
-                  class="btn btn-primary w-100"
-                  id="current-location-button"
-                >
+                <button class="btn w-100" id="current-location-button">
                   Current
                 </button>
               </div>
@@ -107,6 +102,14 @@
             </div>
           </div>
           <div class="weather-forecast" id="forecast"></div>
+          <br />
+          <div class="defenition">
+            * Eqlim [/~eqlim] ( Persian = اقلیم) is a Persian word for climate.
+          </div>
+          <div class="note">
+            ** If you use this app with a mobile device please rotate your
+            device 90° for a better experience.
+          </div>
         </div>
         <small>
           <a

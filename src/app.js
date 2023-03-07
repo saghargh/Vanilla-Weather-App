@@ -37,7 +37,7 @@ function changeBackground(hours) {
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/afternoon.jpg")`);
   }
-  if ((hours >= 18 && hours, 22)) {
+  if (hours >= 18 && hours < 22) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/evening.jpg")`);
@@ -171,7 +171,7 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-search("Toronto");
+search("Shiraz");
 
 let celsiusTemperature = null;
 
