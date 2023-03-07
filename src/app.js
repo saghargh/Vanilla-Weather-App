@@ -28,28 +28,24 @@ function formatDate(timestamp) {
 
 function changeBackground(hours) {
   if (hours >= 6 && hours < 12) {
-    document.setAttribute(
-      "style",
-      "background-image: url('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/morning.jpg')"
-    );
+    document
+      .querySelector("body")
+      .setAttribute("style", `background-image: url("./images/morning.jpg")`);
   }
   if (hours >= 12 && hours < 18) {
-    document.setAttribute(
-      "style",
-      "background-image: url('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/afternoon.jpg')"
-    );
+    document
+      .querySelector("body")
+      .setAttribute("style", `background-image: url("./images/afternoon.jpg")`);
   }
   if ((hours >= 18 && hours, 22)) {
-    document.setAttribute(
-      "style",
-      "background-image: url ('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/evening.jpg')"
-    );
+    document
+      .querySelector("body")
+      .setAttribute("style", `background-image: url("./images/evening.jpg")`);
   }
   if (hours > 22) {
-    document.setAttribute(
-      "style",
-      "background-image: url('H:/saghar.gh/GitHub/Shecodes/plus/week 7/vanilla weather app/vanilla-Weather-App/night.jpg')"
-    );
+    document
+      .querySelector("body")
+      .setAttribute("style", `background-image: url("./images/night.jpg")`);
   }
 }
 
