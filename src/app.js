@@ -27,6 +27,11 @@ function formatDate(timestamp) {
 }
 
 function changeBackground(hours) {
+  if (hours >= 0 && hours < 4) {
+    document
+      .querySelector("body")
+      .setAttribute("style", `background-image: url("./images/dawn.jpg")`);
+  }
   if (hours >= 4 && hours < 12) {
     document
       .querySelector("body")
@@ -43,11 +48,6 @@ function changeBackground(hours) {
       .setAttribute("style", `background-image: url("./images/evening.jpg")`);
   }
   if (hours >= 20 && hours < 24) {
-    document
-      .querySelector("body")
-      .setAttribute("style", `background-image: url("./images/night.jpg")`);
-  }
-  if (hours >= 0 && hours < 4) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/night.jpg")`);
