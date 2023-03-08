@@ -42,7 +42,12 @@ function changeBackground(hours) {
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/evening.jpg")`);
   }
-  if (hours > 20 && hours < 24) {
+  if (hours >= 20 && hours < 24) {
+    document
+      .querySelector("body")
+      .setAttribute("style", `background-image: url("./images/night.jpg")`);
+  }
+  if (hours >= 0 && hours < 4) {
     document
       .querySelector("body")
       .setAttribute("style", `background-image: url("./images/night.jpg")`);
